@@ -106,10 +106,19 @@ int niu_chi_cao()
 	
 }
 	
-	
+int swap()
+{
+	int a,b,c;
+	cin>>a>>b;
+	c = a;
+	a = b;
+	b = c;
+	cout<<a<<" "<<b<<endl;
+}  
 int main()
 {
 //	triangle();
 	//print_n_char('*', 16);
-	niu_chi_cao();
+	//niu_chi_cao();
+	swap();
 }
