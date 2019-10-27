@@ -92,7 +92,7 @@ int niu_chi_cao()
 {	
 	int x,a,y,b = 0;
 	float z = 0;
-	cout << "请输入x,a,y,b:" << endl;
+	cout << "请输入x,a,y,b:x>y，a<b，ax<by" << endl;
 	cin >> x >> a >> y >> b;
 	if (x>=10000 || a>=10000 || y>=10000 || b>=10000 || x<=y || a>=b || a*x>=b*y )
 	{
@@ -115,10 +115,49 @@ int swap()
 	b = c;
 	cout<<a<<" "<<b<<endl;
 }  
+
+double division_operation()
+{
+	int a,b;
+	double n;
+	cin >> a>> b;
+	n = (double)a/b;
+	cout<< setiosflags(ios::fixed) << setprecision(9)<< n;
+}
+
+float died()
+{
+	int a,b = 0;
+	float c = 0;
+	cin >>a>>b;
+	c = ((float)b/(a + b))*100;
+	cout <<setiosflags(ios::fixed)<<setprecision(3)<<c<<"%"<<endl;
+}
+
+double polynomial()
+{
+	double x,a,b,c,d;
+	cin>>x>>a>>b>>c>>d;
+	if(x>100||a>100||b>100||c>100||d>100||x<-100||a<-100||b<-100||c<-100||d<-100)
+	{
+		cout<<"x,a,b,c,d绝对值不大于100"<<endl; 
+	
+	}
+	else
+	{
+		double polynomial_x;
+		polynomial_x = a*x*x*x+b*x*x+c*x+d;
+		cout<<setiosflags(ios::fixed)<<setprecision(7)<<polynomial_x<<endl;
+	}
+}
+ 
 int main()
 {
 //	triangle();
 	//print_n_char('*', 16);
 	//niu_chi_cao();
-	swap();
+	//swap();
+	//division_operation();
+	//died();
+	polynomial();
 }
