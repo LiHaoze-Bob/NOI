@@ -1,6 +1,6 @@
 #include <stdio.h>
  
-//use while
+
 int bingbao(unsigned long  a )
 {
     int ret=0;
