@@ -150,6 +150,84 @@ double polynomial()
 		cout<<setiosflags(ios::fixed)<<setprecision(7)<<polynomial_x<<endl;
 	}
 }
+
+int drop()
+{
+	float a,b;
+	cin>>a;
+	if(a>0)
+	{
+		cout<<setiosflags(ios::fixed)<<setprecision(0)<<a<<endl;
+	}
+} 
+
+int is_odd(long long a)
+{
+	if(a%2==0)
+		return false;
+	else
+		return true;
+}
+
+#define DEBUG  
+
+int danm()
+{
+	long long n=0,tmp=113400;
+	while(tmp<100000000) 
+	{
+		tmp++;
+		cout<<tmp<<endl;
+		n=tmp;
+		if(!is_odd(n))
+		{
+tag1:		
+			DEBUG("\tLine: %d, n: %d\n", __LINE__, n);
+			while(1)
+			{
+				n=n/2;
+				if(is_odd(n))
+				{
+					DEBUG("\tLine: %d, n: %d\n", __LINE__, n);
+					break;
+				}
+		    }
+		    
+		    if(n==1){
+		    	DEBUG("\tLine: %d, n: %d\n", __LINE__, n);
+		    	continue;
+		    }
+		    else
+		    {
+tag2:		    
+				DEBUG("\tLine: %d, n: %d\n", __LINE__, n);	
+				n=3*n+1;
+				if(!is_odd(n))
+				{
+					DEBUG("\tLine: %d, n: %d\n", __LINE__, n);
+					goto tag1;
+				}
+				else
+				{
+					if(n==1){ 
+						DEBUG("\tLine: %d, n: %d\n", __LINE__, n);
+						continue;
+					} 
+					else{
+						DEBUG("\tLine: %d, n: %d\n", __LINE__, n); 
+						goto tag2;
+					}
+				}
+			}
+		}
+		else
+		{
+			DEBUG("\tLine: %d, n: %d\n", __LINE__, n);
+			goto tag2;
+		}
+	}
+	
+} 
  
 int main()
 {
@@ -159,5 +237,6 @@ int main()
 	//swap();
 	//division_operation();
 	//died();
-	polynomial();
+	//polynomial();
+	danm();
 }

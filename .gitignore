@@ -1,0 +1,6 @@
+*.o
+*.exe
+*.layout
+C++/test project/*.o
+C++/test project/*.exe
+C++/test project/*.layout
