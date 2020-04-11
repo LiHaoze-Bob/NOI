@@ -12,7 +12,7 @@ serversocket = socket.socket(
 
 # 获取本地主机名
 #host = socket.gethostname()
-host = '127.0.0.1'
+host = '0.0.0.0'
 port = 9999
 
 # 绑定端口号
@@ -29,6 +29,6 @@ while True:
     while(1):
         recv_msg = clientsocket.recv(1024)
         print (recv_msg.decode('utf-8'))
-    msg=raw_input() + "\r\n"
-    clientsocket.send(msg.encode('utf-8'))
+        msg=input() + "\r\n"
+        clientsocket.send(msg.encode('utf-8'))
     #clientsocket.close()
